@@ -1,0 +1,47 @@
+<div class="header">
+  <h2>Payments Portal</h2>
+<span class="after-h2">Make your payments in a secure way...</span>
+</div>
+<form>
+  <table class="formtable" [formGroup]="form">
+    <tr>
+      <td><div>
+        <label for="Account Id">Account Number</label>
+      </div></td>
+      <td><input id="Account Id" formControlName="Account Id" type="number" class="form-group">
+        <div *ngIf="form.get('Account Id').touched && form.get('Account Id').invalid" class="alert alert-danger"> 
+          <div *ngIf="form.get('Account Id').errors.required" class="alert alert-danger">Account Id is mandatory</div>
+          <div *ngIf="form.get('Account Id').errors.minlength" class="alert alert-danger">Account number should be of 10 digits</div>
+        </div></td>
+    </tr>
+    <tr>
+      <td><div>
+        <label for="Email">Registered Email Id</label>
+      </div></td>
+      <td><input id="Email" formControlName="email" type="email" class="form-group">
+        <div *ngIf="form.get('email').touched && form.get('email').invalid" class="alert alert-danger"> 
+          <div *ngIf="form.get('email').errors.email" class="alert alert-danger">Invalid Email</div>
+        </div></td>
+    </tr>
+    <tr>
+      <td><div>
+        <label for="Mobile-num">Registered Mobile Number</label>
+      </div></td>
+      <td><input id="Mobile-num" formControlName="mobileNum" type="tel" class="form-group">
+        <div *ngIf="form.get('mobileNum').touched && form.get('mobileNum').invalid" class="alert alert-danger"> 
+          <div *ngIf="form.get('mobileNum').errors.required" class="alert alert-danger">Mobile number is mandatory</div>
+          <div *ngIf="form.get('mobileNum').errors.minlength" class="alert alert-danger">Mobile number should be of 10 digits</div>
+        </div></td>
+    </tr>
+    <tr>
+      <td><label for="Password">Account Password</label></td>
+      <td><input id="Password" formControlName="Password" type="password" class="form-group">
+        <div *ngIf="form.get('Password').touched && form.get('Password').invalid" class="alert alert-danger"> 
+          <div *ngIf="form.get('Password').errors.required" class="alert alert-danger">Please enter your password</div>
+        </div></td>
+    </tr>
+    <tr>
+      <td colspan="2"><button id="submit-button" (click)="LoginFormSubmition()" type="button" [disabled]="!form.valid" class="formcontrol">Submit</button></td>
+    </tr>
+  </table>
+</form>

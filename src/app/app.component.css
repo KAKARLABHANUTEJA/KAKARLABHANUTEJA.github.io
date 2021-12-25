@@ -1,0 +1,19 @@
+.formtable{
+    margin:auto;
+    background-color: rgb(173, 175, 170);
+    border: 1px solid black;
+    margin-top:10%;
+    align-content: center;
+    text-align: center;
+}
+.header{
+    position: relative;
+    align-items: center;
+    left: 40%;
+}
+.submit-button{
+    margin-left:15%;
+}
+.alert{
+    background-color: red;
+}
